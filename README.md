@@ -20,7 +20,7 @@ The core objective is to solve the **forward structural problem**: verifying tha
 
 ## 2. Visual Demonstration: The Emergence of Flow
 
-The animation below visualizes the central physical phenomenon: the transition from thermal equilibrium to a structured hydrodynamic flow.
+The animation below visualises the central physical phenomenon: the transition from thermal equilibrium to a structured hydrodynamic flow.
 
 <p align="center">
   <img src="multiphysics_publication.gif" alt="Hydrodynamic Limit Convergence" width="100%">
@@ -29,10 +29,10 @@ The animation below visualizes the central physical phenomenon: the transition f
 > **Figure 1: Real-time convergence to the Hydrodynamic Limit.**
 > *   **Left Panel (Equilibrium):** The system exhibits pure Brownian motion. The time-averaged velocity profile is zero, validating the thermostat's neutrality.
 > *   **Right Panel (Driven):** Under an external body force, a parabolic velocity profile emerges from the chaos. The red markers (MD data) converge to the analytical Navier-Stokes solution (black dashed line) as the flow develops.
-> *   **Center:** The velocity profile evolution tracks the convergence of the Reynolds number ($Re$) and Kinetic Energy ($KE$) towards a steady state.
+> *   **Centre:** The velocity profile evolution tracks the convergence of the Reynolds number ($Re$) and Kinetic Energy ($KE$) towards a steady state.
 
 ### Quantitative Animation Check
-To ensure visual fidelity, the visualization suite performs a cross-check against the analytical solution:
+To ensure visual fidelity, the visualisation suite performs a cross-check against the analytical solution:
 
 <p align="center">
   <img src="velocity_profiles_final.png" alt="Velocity Profile Validation" width="60%">
@@ -48,15 +48,14 @@ The simulation implements a canonical **Lennard-Jones (LJ) fluid** confined in a
 
 *   **Interaction Potential:** Truncated and shifted Lennard-Jones potential ($r_c = 2.5\sigma$) for fluid-fluid interactions, coupled with a WCA (Weeks-Chandler-Andersen) repulsive potential for wall confinement.
 *   **Integration Scheme:** **Velocity-Verlet algorithm**. This symplectic, time-reversible integrator ensures long-term energy stability ($O(\Delta t^2)$), crucial for distinguishing physical dissipation from numerical drift.
-*   **Spatially-Selective Thermostat:** To avoid damping the hydrodynamic modes in the bulk, we implement a **Langevin thermostat** strictly localized at the boundaries (walls). This acts as a heat sink and enforces no-slip boundary conditions via friction, leaving the bulk fluid Newtonian (NVE-like).
+*   **Spatially-Selective Thermostat:** To avoid damping the hydrodynamic modes in the bulk, we implement a **Langevin thermostat** strictly localised at the boundaries (walls). This acts as a heat sink and enforces no-slip boundary conditions via friction, leaving the bulk fluid Newtonian (NVE-like).
 
 ### 3.2. Mathematical Formalism (The Lifting Map)
 To bridge the scale gap, we compute the local stress tensor $\boldsymbol{\tau}(\mathbf{r})$ using the **Irving-Kirkwood (IK) formalism**. Unlike simple virial estimators, the IK method distributes the interaction contribution along the bond vector connecting particle pairs, ensuring that the differential momentum balance is satisfied locally:
 
 $$ \frac{\partial}{\partial t}(\rho \mathbf{u}) + \nabla \cdot (\rho \mathbf{u} \otimes \mathbf{u}) = \nabla \cdot \boldsymbol{\tau} + \mathbf{f}_{ext} $$
 
-In the steady-state Poiseuille geometry, this simplifies to a linear stress gradient:
-$$ \frac{\partial \tau_{xy}}{\partial y} = -\rho f_x $$
+In the steady-state Poiseuille geometry, this simplifies to a linear stress gradient: $$ \frac{\partial \tau_{xy}}{\partial y} = -\rho f_x $$
 
 ---
 
@@ -81,7 +80,7 @@ To ensure the robustness of the simulation, we perform rigorous diagnostic tests
 </p>
 
 *   **Energy Conservation (Left):** In the NVE ensemble (thermostat off), the total energy drift is $< 10^{-4}$ over $10^5$ steps, confirming the stability of the integrator.
-*   **Thermostat Topology (Right):** The friction coefficients $\gamma_x, \gamma_y$ are spatially plotted. Note the sharp localization of $\gamma_x$ (blue) at the walls to enforce no-slip, while the bulk remains friction-free ($\gamma_x=0$).
+*   **Thermostat Topology (Right):** The friction coefficients $\gamma_x, \gamma_y$ are spatially plotted. Note the sharp localisation of $\gamma_x$ (blue) at the walls to enforce no-slip, while the bulk remains friction-free ($\gamma_x=0$).
 
 ---
 
@@ -122,7 +121,7 @@ Performs energy conservation tests (NVE) and verifies thermostat topology.
 python physics_diagnostics.py
 ```
 
-**3. Generate Visualization:**
+**3. Generate Visualisation:**
 Renders the high-resolution GIF comparing equilibrium vs. driven states.
 ```bash
 python visualize_multiphysics_publication.py

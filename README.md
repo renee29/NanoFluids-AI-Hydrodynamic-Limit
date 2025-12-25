@@ -55,7 +55,7 @@ To bridge the scale gap, we compute the local stress tensor $\boldsymbol{\tau}(\
 
 $$ \frac{\partial}{\partial t}(\rho \mathbf{u}) + \nabla \cdot (\rho \mathbf{u} \otimes \mathbf{u}) = \nabla \cdot \boldsymbol{\tau} + \mathbf{f}_{ext} $$
 
-In the steady-state Poiseuille geometry, this simplifies to a linear stress gradient: $$ \frac{\partial \tau_{xy}}{\partial y} = -\rho f_x $$
+In the steady-state Poiseuille geometry, this simplifies to a linear stress gradient: $ \frac{\partial \tau_{xy}}{\partial y} = -\rho f_x $
 
 ---
 

@@ -77,12 +77,15 @@ We performed a production run ($N=800$, $t=200\tau$) to validate the recovery of
 To ensure the robustness of the simulation, we perform rigorous diagnostic tests.
 
 <p align="center">
-  <img src="diagnostic_energy_conservation_nve.png" width="48%" alt="Energy Conservation">
-  <img src="diagnostic_thermostat_spatial_profile.png" width="48%" alt="Thermostat Profile">
+  <img src="diagnostic_energy_conservation_nve.png" width="100%" alt="Energy Conservation (Top)">
 </p>
 
-*   **Energy Conservation (Left):** In the NVE ensemble (thermostat off), the total energy drift is $< 10^{-4}$ over $10^5$ steps, confirming the stability of the integrator.
-*   **Thermostat Topology (Right):** The friction coefficients $\gamma_x, \gamma_y$ are spatially plotted. Note the sharp localisation of $\gamma_x$ (blue) at the walls to enforce no-slip, while the bulk remains friction-free ($\gamma_x=0$).
+<p align="center">
+  <img src="diagnostic_thermostat_spatial_profile.png" width="100%" alt="Thermostat Profile (Bottom)">
+</p>
+
+*   **Energy Conservation (Top):** In the NVE ensemble (thermostat off), the total energy drift is $< 10^{-4}$ over $10^5$ steps, confirming the stability of the integrator.
+*   **Thermostat Topology (Bottom):** The friction coefficients $\gamma_x, \gamma_y$ are spatially plotted. Note the sharp localisation of $\gamma_x$ (blue) at the walls to enforce no-slip, while the bulk remains friction-free ($\gamma_x=0$).
 
 ---
 
